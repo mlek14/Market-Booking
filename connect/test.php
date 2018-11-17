@@ -1,10 +1,9 @@
 <?php
-require 'connect_db.php';
 require 'user.php';
-require 'market.php';
+// require 'market.php';
 
-$user = new User(new ConnectDB);
-$market = new Market(new ConnectDB);
+$user = new User();
+// $market = new Market();
 
 $udata = [
     'roleId' => 2,
@@ -24,7 +23,7 @@ $mData = [
     "userId" => 7,
 ];
 
-$add = $market->deleteMarket(1);
+$add = $user->getUsers();
 echo json_encode($add);
 
 // $aaa = new ConnectDB();

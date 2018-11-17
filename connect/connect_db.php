@@ -1,6 +1,6 @@
 <?php
 
-class ConnectDB extends mysqli
+class ConnectDB
 {
     public $mysqli;
 

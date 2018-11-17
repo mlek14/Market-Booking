@@ -1,5 +1,7 @@
 <?php
 
+require 'connect_db.php';
+
 class User
 {
     private $connect;
@@ -11,8 +13,9 @@ class User
     private $password;
     private $status;
 
-    public function __construct(ConnectDB $db)
+    public function __construct()
     {
+        $db = new ConnectDB();
         $this->connect = $db->mysqli;
     }
 

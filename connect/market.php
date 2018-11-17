@@ -1,5 +1,7 @@
 <?php
 
+require 'connect_db.php';
+
 class Market
 {
     private $connect;
@@ -10,8 +12,9 @@ class Market
     private $provinceId;
     private $userId;
 
-    public function __construct(ConnectDB $db)
+    public function __construct()
     {
+        $db = new ConnectDB();
         $this->connect = $db->mysqli;
     }
 
