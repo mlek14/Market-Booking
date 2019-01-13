@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>การพัฒนาระบบฐานข้อมูลการจองพื้นที่ตลาดนัดออนไลน์</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- my style -->
+    <link rel="stylesheet" href="styles/index.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- jquery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="cover-img">
+            <img class="logo" src="assets/logo.png" width="">
+        </div>
+
+        <div class="index-btn">
+            <button class="btn btn-primary" onclick="gotoLogin()">Login</button>
+            <button class="btn btn-secondary" onclick="gotoRegister()">Register</button>
+        </div>
+
+        <script>
+            function gotoLogin() {
+                window.location.href = "login.html";
+            }
+
+            function gotoRegister() {
+                window.location.href = "register.html";
+            }
+        </script>
+    </div>
+
+
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

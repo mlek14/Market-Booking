@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- my style -->
+    <link rel="stylesheet" href="styles/login.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- jquery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- login form -->
+        <div class="login-form">
+            <form name="loginForm" method="post">
+                <div class="form-group">
+                    <label for="">อีเมล</label>
+                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="กรอกอีเมล" id="email"
+                        name="email">
+                </div>
+                <div class="form-group">
+                    <label for="">รหัสผ่าน</label>
+                    <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน" id="password" name="password">
+                </div>
+                <div class="btn-login">
+                    <button id="btnLogin" type="button" class="btn btn-primary">เข้าสู่ระบบ</button>
+                </div>
+                <div class="btn-goto-register">
+                    <a href="http://localhost/market-booking/register.html">สมัครสมาชิก ?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $("#btnLogin").click(() => {
+            let email = $("#email").val();
+            let password = $("#password").val();
+            let body = { email: email, password: password };
+            console.log(body);
+            $.post(baseUrl + "market-booking/api/login.php", body, (res) => {
+                console.log(res);
+            }, "json")
+        });
+    </script>
+
+    <!-- config -->
+    <script src="config/config.js"></script>
+
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
