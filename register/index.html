@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- my style -->
+    <link rel="stylesheet" href="register.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- jquery -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- alert register result -->
+        <!-- on success -->
+        <div id="alertSuccess" class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Success!</h4>
+            <p>Welcome to Market Booking System.</p>
+            <hr>
+            <p class="mb-0">Contact us : 00-00000-0000</p>
+        </div>
+        <!-- on error -->
+        <div id="alertFail" class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Failed!</h4>
+            <p>Your registration is failed.</p>
+            <hr>
+            <p class="mb-0">Contact us : 00-0000-0000</p>
+        </div>
+
+        <!-- register form -->
+        <div class="register-form">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>ชื่อ</label>
+                        <input id="firstname" type="text" class="form-control" placeholder="ชื่อจริง">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>นามสกุล</label>
+                        <input id="lastname" type="text" class="form-control" placeholder="นามสกุลจริง">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>อีเมล</label>
+                        <input id="email" type="email" class="form-control" placeholder="example@mail.com">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>เบอร์โทร</label>
+                        <input id="phone_no" type="text" class="form-control" placeholder="09-9999-9999">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>ชื่อผู้ใช้</label>
+                        <input id="username" type="text" class="form-control" placeholder="Username01">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>รหัสผ่าน</label>
+                        <input id="password" type="password" class="form-control" placeholder="asdAasdnl!lsdasd">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>ประเภทสมาชิก</label>
+                        <select class="form-control" id="role">
+                            <option selected disabled>-- เลือกประเภทสมาชิก --</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="register-form-btn">
+                    <button type="button" class="btn btn-outline-secondary" onclick="back()">กลับ</button>
+                    <button type="button" class="btn btn-primary" onclick="register()">ยืนยัน</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- script -->
+    <script src="../config/config.js"></script>
+    <script src="register.js"></script>
+
+    <!-- bootstrap -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

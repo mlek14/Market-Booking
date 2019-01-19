@@ -1,1 +1,1 @@
-var baseUrl = "http://localhost/";
+var baseUrl = "http://localhost/~cpt4yn5718/market-booking/";
