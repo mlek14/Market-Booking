@@ -16,20 +16,23 @@
 
 <body>
     <div class="container">
+        <!-- Modal -->
+        <div id="alert"></div>
+
         <!-- login form -->
         <div class="login-form">
-            <form name="loginForm" method="post">
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="">อีเมล</label>
-                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="กรอกอีเมล" id="email"
-                        name="email">
+                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="กรอกอีเมล หรือชื่อผู้ใช้"
+                        id="email">
                 </div>
                 <div class="form-group">
                     <label for="">รหัสผ่าน</label>
-                    <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน" id="password" name="password">
+                    <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน" id="password">
                 </div>
                 <div class="btn-login">
-                    <button id="btnLogin" type="button" class="btn btn-primary">เข้าสู่ระบบ</button>
+                    <button id="btnLogin" type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
                 </div>
                 <div class="btn-goto-register">
                     <a href="../register/">สมัครสมาชิก ?</a>
@@ -38,19 +41,10 @@
         </div>
     </div>
 
-    <script>
-        $("#btnLogin").click(() => {
-            let body = {
-                email: $("#email").val(),
-                password: $("#password").val()
-            };
-            console.log(body);
-            $.post(baseUrl + "market-booking/api/login.php", body, res => res, "json")
-        });
-    </script>
-
-    <!-- config -->
+    <!-- script -->
     <script src="../config/config.js"></script>
+    <script src="login.js"></script>
+    <script src="../layout/modal/modal.js"></script>
 
     <!-- bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>

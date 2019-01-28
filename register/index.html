@@ -11,31 +11,18 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- jquery -->
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <title>Document</title>
+    <title>การพัฒนาระบบฐานข้อมูลการจองพื้นที่ตลาดนัดออนไลน์</title>
 </head>
 
 <body>
 
     <div class="container">
-        <!-- alert register result -->
-        <!-- on success -->
-        <div id="alertSuccess" class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Success!</h4>
-            <p>Welcome to Market Booking System.</p>
-            <hr>
-            <p class="mb-0">Contact us : 00-00000-0000</p>
-        </div>
-        <!-- on error -->
-        <div id="alertFail" class="alert alert-danger" role="alert">
-            <h4 class="alert-heading">Failed!</h4>
-            <p>Your registration is failed.</p>
-            <hr>
-            <p class="mb-0">Contact us : 00-0000-0000</p>
-        </div>
+        <!-- Modal -->
+        <div id="alert"></div>
 
         <!-- register form -->
         <div class="register-form">
-            <form>
+            <form id="registerForm">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>ชื่อ</label>
@@ -75,18 +62,20 @@
                     </div>
                 </div>
                 <div class="register-form-btn">
-                    <button type="button" class="btn btn-outline-secondary" onclick="back()">กลับ</button>
-                    <button type="button" class="btn btn-primary" onclick="register()">ยืนยัน</button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="back()">กลับหน้าแรก</button>
+                    <button type="submit" class="btn btn-primary">ยืนยัน</button>
                 </div>
             </form>
         </div>
     </div>
+
     <!-- script -->
     <script src="../config/config.js"></script>
     <script src="register.js"></script>
+    <script src="../layout/modal/modal.js"></script>
 
     <!-- bootstrap -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 

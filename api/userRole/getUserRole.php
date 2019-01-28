@@ -1,17 +1,20 @@
 <?php
-
 require_once('../connectDB.php');
 
 $db = new ConnectDB();
 
-$query = $db->query("select * from user_roles");
-while ($fetch = $query->fetch_assoc()) 
+if ($_SERVER["REQUEST_METHOD"] == "GET")
 {
-    $userRoles[] = $fetch;
-}
-$db->close();
+    $query = $db->query("select * from user_roles");
+    while ($fetch = $query->fetch_assoc()) 
+    {
+        $userRoles[] = $fetch;
+    }
 
-if ($query->num_rows > 0)
-{
-    echo json_encode($userRoles);
+    if ($query->num_rows > 0)
+    {
+        echo json_encode($userRoles);
+    }
 }
+
+$db->close();

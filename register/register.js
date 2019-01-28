@@ -1,3 +1,21 @@
+window.onload = function () {
+    $("#alert").load("../layout/modal/modal.html");
+    getUserRole();
+
+    // setTimeout(() => {
+    //     $('#modal').on("hidden.bs.modal", () => {
+    //         window.location.reload();
+    //     });
+    // });
+};
+
+$(document).ready(() => {
+    $("#registerForm").submit((e) => {
+        register();
+        e.preventDefault();
+    });
+});
+
 function register() {
     let body = {
         firstname: $("#firstname").val(),
@@ -9,25 +27,27 @@ function register() {
         role: $("#role").val()
     };
 
-    $.post(baseUrl + "api/user/register.php", body, res => res, "json")
-        .done((res) => {
-            $("#alertSuccess").show();
-        })
-        .fail((err) => {
-            $("#alertFail").show();
-        });
+    $.post("../api/register.php", body, res => {
+        if (res.success) {
+            setModal("Registration", "Success!");
+            showModal();
+
+        }
+        else {
+            setModal("Registration", res.message);
+            showModal();
+        }
+    }, "json");
 }
 
 function back() {
-    window.history.back();
+    window.location.href = "../";
 }
 
-(() => {
-    $("#alertSuccess").hide();
-    $("#alertFail").hide();
+function getUserRole() {
     $.getJSON(baseUrl + "api/userrole/getuserrole.php", data => {
         data.forEach(role => {
             $("#role").append($("<option>").attr("value", role.Id).text(role.role_name));
         });
     });
-})();
+}
