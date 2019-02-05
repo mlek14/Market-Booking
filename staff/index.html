@@ -18,19 +18,28 @@
     <div id="navbar"></div>
     <div class="container">
         <!-- table -->
-        <table class="table">
-            <thead class="thead-light">
+        <table class="table table-hover mt-5">
+            <thead class="table-active">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">ลำดับ</th>
+                    <th scope="col">ประเภท</th>
+                    <th scope="col">ชื่อ-สกุล</th>
+                    <th scope="col">อีเมล</th>
+                    <th scope="col">ชื่อผู้ใช้</th>
+                    <th scope="col">โทรศัพท์</th>
+                    <th scope="col">สถานะ</th>
+                    <th scope="col">เพิ่มเมื่อ</th>
+                    <th scope="col">แก้ไขล่าสุด</th>
+                    <th scope="col">เพิ่มเติม</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr></tr>
-            </tbody>
+            <tbody id="table-body"></tbody>
         </table>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+            <ul id="pagination"  class="pagination justify-content-center"></ul>
+        </nav>
     </div>
 
     <!-- self script -->

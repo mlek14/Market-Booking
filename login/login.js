@@ -14,15 +14,15 @@ function login() {
         email: $("#email").val(),
         password: $("#password").val()
     }
-    $.post("../api/login.php", body, res => {
+    $.post("../api/login_staff.php", body, res => {
 
         if (res.success) {
             window.localStorage.setItem("userData", JSON.stringify(res));
-            if (res.data.user_roleId == 1) {
+            if (res.data.staff_roleId == 1) {
                 window.location.href = "../staff";
             }
-            else if (res.data.user_roleId == 2) {
-
+            else if (res.data.staff_roleId == 2) {
+                window.location.href = "../staff";
             }
         }
         else {

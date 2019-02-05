@@ -5,7 +5,7 @@ class ConnectDB extends mysqli
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
-    private $database = "market_booking";
+    private $database = "cpt4yn5718";
 
     public function __construct()
     {
