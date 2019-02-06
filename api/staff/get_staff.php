@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET")
         where s.staff_status != 'rmv'
         limit $startRecord, $limit ";
     $query = $db->query($sql);
-    
+
     // get num rows
     $num_rows = $db->query("select count(*) as num_rows from staffs where staff_status != 'rmv'")->fetch_assoc()["num_rows"];
 
