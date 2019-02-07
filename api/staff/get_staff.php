@@ -6,7 +6,7 @@ $db = new ConnectDB();
 if ($_SERVER["REQUEST_METHOD"] == "GET")
 {
     $page = $_GET["page"];
-    $limit = 10;
+    $limit = $_GET["limit"];
     $startRecord = ($page - 1) * $limit;
     $sql = "select
             s.*, r.role_name

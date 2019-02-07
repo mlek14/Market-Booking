@@ -17,27 +17,22 @@
 <body>
 
     <div class="container">
-        <div class="cover-img">
-            <img class="logo" src="assets/logo.png" width="">
+
+        <div class="p-5">
+            <div class="card text-center">
+                <div class="card-header bg-primary text-white">ระบบการจองพื้นที่ตลาดนัดออนไลน์</div>
+                <img class="card-img-top" src="assets/logo.png" alt="Card image cap">
+                <div class="card-body bg-light">
+                    <h5 class="card-title">Welcome to Market Booking System</h5>
+                    <h5 class="card-title">ยินดีต้อนรับสู่ระบบการจองพื้นที่ตลาดนัดออนไลน์</h5>
+                    <button class="btn btn-primary" onclick="gotoLogin()">เข้าสู่ระบบ</button>
+                    <button class="btn btn-link" onclick="gotoRegister()">สมัครสมาชิก</button>
+                </div>
+            </div>
         </div>
-
-        <div class="index-btn">
-            <button class="btn btn-primary" onclick="gotoLogin()">เข้าสู่ระบบ</button>
-            <button class="btn btn-secondary" onclick="gotoRegister()">สมัครสมาชิก</button>
-        </div>
-
-        <script>
-            function gotoLogin() {
-                window.location.href = "login";
-            }
-
-            function gotoRegister() {
-                window.location.href = "register";
-            }
-        </script>
     </div>
 
-
+    <script src="index.js"></script>
     <!-- bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

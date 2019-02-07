@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- my style -->
-    <link rel="stylesheet" href="login.css">
     <!-- bootstrap -->
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- jquery -->
@@ -20,24 +18,30 @@
         <div id="alert"></div>
 
         <!-- login form -->
-        <div class="login-form">
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="">อีเมล</label>
-                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="กรอกอีเมล หรือชื่อผู้ใช้"
-                        id="email">
+        <div class="mt-5 p-5 mx-auto" style="width: 600px">
+            <div class="card">
+                <dic class="card-header bg-primary text-white text-center">เข้าสู่ระบบ</dic>
+                <div class="card-body bg-light">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="">อีเมล</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="กรอกอีเมล หรือชื่อผู้ใช้"
+                                id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="">รหัสผ่าน</label>
+                            <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน" id="password">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button id="btnLogin" type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+                        </div>
+                        <div class="d-flex justify-content-center mt-3">
+                            <a href="../register/">สมัครสมาชิก ?</a>
+                        </div>
+
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="">รหัสผ่าน</label>
-                    <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน" id="password">
-                </div>
-                <div class="btn-login">
-                    <button id="btnLogin" type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
-                </div>
-                <div class="btn-goto-register">
-                    <a href="../register/">สมัครสมาชิก ?</a>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 

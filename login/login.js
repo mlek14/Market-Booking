@@ -1,8 +1,5 @@
-window.onload = function () {
+$(() => {
     $("#alert").load("../layout/modal/modal.html");
-};
-
-$(document).ready(() => {
     $("#loginForm").submit((e) => {
         login();
         e.preventDefault();
@@ -30,5 +27,4 @@ function login() {
             showModal();
         }
     }, "json");
-
 }

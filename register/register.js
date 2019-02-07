@@ -1,15 +1,6 @@
-window.onload = function () {
+$(() => {
     $("#alert").load("../layout/modal/modal.html");
     getUserRole();
-
-    // setTimeout(() => {
-    //     $('#modal').on("hidden.bs.modal", () => {
-    //         window.location.reload();
-    //     });
-    // });
-};
-
-$(document).ready(() => {
     $("#registerForm").submit((e) => {
         register();
         e.preventDefault();
@@ -44,8 +35,12 @@ function back() {
     window.location.href = "../";
 }
 
+function gotoLogin() {
+    window.location.href = "../login";
+}
+
 function getUserRole() {
-    $.getJSON(baseUrl + "api/userrole/getuserrole.php", data => {
+    $.getJSON("../api/userrole/getuserrole.php", data => {
         data.forEach(role => {
             $("#role").append($("<option>").attr("value", role.Id).text(role.role_name));
         });
