@@ -20,13 +20,11 @@ function register() {
 
     $.post("../api/register.php", body, res => {
         if (res.success) {
-            setModal("Registration", "Success!");
-            showModal();
-
         }
         else {
-            setModal("Registration", res.message);
-            showModal();
+            $("#modal").modal("show");
+            $(".modal-header").text("สมัครสมาชิก");
+            $(".modal-body").text("การสมัครสมาชิกล้มเหลว กรุณาลองใหม่อีกครั้ง")
         }
     }, "json");
 }

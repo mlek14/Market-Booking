@@ -1,40 +1,33 @@
 <?php
-require_once("connectDB.php");
-
-$db = new ConnectDB();
-
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
+    require_once("connectDB.php");
+
+    $db = new ConnectDB();
+
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $sql = "select 
-                u.Id, u.user_firstname, u.user_lastname, u.user_email, u.user_username, 
-                r.role_name 
-            from users as u
-            join user_roles as r on r.Id = u.user_roleId
-            where (u.user_email = '$email' or u.user_username = '$email') and u.user_password = '$password'
-    ";
+    $sql = "select * from users where (user_email = '$email' || user_username = '$email') && user_password = '$password' && user_status = 'con'";
     $query = $db->query($sql);
-
-    $response = [];
+    $num_row = $query->num_rows;
     
-    if ($query->num_rows > 0)
+    if (!$query || $num_row == 0)
     {
-        $fetch = $query->fetch_assoc();
-        $response = [
-            "success" => true,
-            "data" => $fetch
-        ];
+        echo json_encode(["success" => false]);
+        $db->close();
+        exit();
     }
-    else
-    {
-        $response = [
-            "success" => false,
-            "message" => "Failed login."
-        ];
-    }
+    $fetch = $query->fetch_assoc();
+    $response = [
+        "success" => true,
+        "data" => [
+            "Id" => $fetch["Id"],
+            "email" => $fetch["user_email"],
+            "username" => $fetch["user_username"],
+            "roleId" => $fetch["user_roleId"]
+        ]
+    ];
     echo json_encode($response);
+    $db->close();
 }
-
-$db->close();

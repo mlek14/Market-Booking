@@ -10,21 +10,16 @@ function login() {
     let body = {
         email: $("#email").val(),
         password: $("#password").val()
-    }
-    $.post("../api/login_staff.php", body, res => {
-
+    };
+    $.post("../api/login_user.php", body, res => {
         if (res.success) {
-            window.localStorage.setItem("userData", JSON.stringify(res));
-            if (res.data.staff_roleId == 1) {
-                window.location.href = "../staff";
-            }
-            else if (res.data.staff_roleId == 2) {
-                window.location.href = "../staff";
-            }
+            window.localStorage.setItem("user_data", JSON.stringify(res.data));
+            window.location.href = "../user";
         }
         else {
-            setModal("Login", res.message);
-            showModal();
+            $("#modal").modal("show");
+            $(".modal-header").text("เข้าสู่ระบบ");
+            $(".modal-body").text("การเข้าสู่ระบบล้มเหลว");
         }
     }, "json");
 }
