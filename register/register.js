@@ -15,11 +15,14 @@ function register() {
         phone_no: $("#phone_no").val(),
         username: $("#username").val(),
         password: $("#password").val(),
-        role: $("#role").val()
+        type: $("#type").val()
     };
 
     $.post("../api/register.php", body, res => {
         if (res.success) {
+            $("#modal").modal("show");
+            $(".modal-header").text("สมัครสมาชิก");
+            $(".modal-body").text("สำเร็จ")
         }
         else {
             $("#modal").modal("show");
@@ -38,9 +41,9 @@ function gotoLogin() {
 }
 
 function getUserRole() {
-    $.getJSON("../api/userrole/getuserrole.php", data => {
+    $.getJSON("../api/user_role/get.php", data => {
         data.forEach(role => {
-            $("#role").append($("<option>").attr("value", role.Id).text(role.role_name));
+            $("#type").append($("<option>").attr("value", role.ID).text(role.name));
         });
     });
 }
