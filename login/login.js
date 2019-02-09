@@ -14,7 +14,12 @@ function login() {
     $.post("../api/login.php", body, res => {
         if (res.success) {
             window.localStorage.setItem("user_data", JSON.stringify(res.data));
-            window.location.href = "../user";
+            if (res.data.user_typeId == 1) {
+                window.location.href = "../market";
+            }
+            else if (res.data.user_typeId == 2) {
+                window.location.href = "../store";
+            }
         }
         else {
             $("#modal").modal("show");
