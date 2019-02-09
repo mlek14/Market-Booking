@@ -1,5 +1,5 @@
 function gotoLogin() {
-    window.location.href = "login";
+    window.location.href = "login/user";
 }
 
 function gotoRegister() {

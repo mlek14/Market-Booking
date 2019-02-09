@@ -1,5 +1,5 @@
 $(() => {
-    $("#alert").load("../layout/modal/modal.html");
+    $("#alert").load("../../layout/modal/modal.html");
     $("#loginForm").submit((e) => {
         login();
         e.preventDefault();
@@ -11,14 +11,14 @@ function login() {
         email: $("#email").val(),
         password: $("#password").val()
     };
-    $.post("../api/login.php", body, res => {
+    $.post("../../api/login.php", body, res => {
         if (res.success) {
             window.localStorage.setItem("user_data", JSON.stringify(res.data));
             if (res.data.user_typeId == 1) {
-                window.location.href = "../market";
+                window.location.href = "../../market";
             }
             else if (res.data.user_typeId == 2) {
-                window.location.href = "../store";
+                window.location.href = "../../store";
             }
         }
         else {

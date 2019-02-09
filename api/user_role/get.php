@@ -9,10 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         while ($fetch = $query->fetch_assoc()) {
             $userRoles[] = [
                 "ID" => $fetch["ID"],
-                "name" => $fetch["name"]
+                "name" => $fetch["name"],
             ];
         }
         echo json_encode($userRoles);
     }
-    $db->close();
 }

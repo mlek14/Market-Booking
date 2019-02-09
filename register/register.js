@@ -32,12 +32,8 @@ function register() {
     }, "json");
 }
 
-function back() {
-    window.location.href = "../";
-}
-
 function gotoLogin() {
-    window.location.href = "../login";
+    window.location.href = "../login/user";
 }
 
 function getUserRole() {

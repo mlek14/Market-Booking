@@ -1,28 +1,28 @@
 $(() => {
     var user = JSON.parse(window.localStorage.getItem("user_data"));
-    if (user != null && user.user_typeId == 2) {
+    if (user != null && user.user_typeId == 1) {
         console.log(user);
         $("#navbar").load("navbar.html");
-        $("#booking").load("booking.html");
+        $("#market").load("market.html");
+    } else {
+        window.location.href = baseUrl;
     }
-    // window.location.href = baseUrl;
-    console.log(user);
 });
 
-function loadBooking() {
-    $("#booking").load("booking.html");
+function loadMarket() {
+    $("#market").load("market.html");
     $("#payment").html(null);
     $("#history").html(null);
 }
 
 function loadPayment() {
-    $("#booking").html(null);
+    $("#market").html(null);
     $("#payment").load("payment.html");
     $("#history").html(null);
 }
 
 function loadHistory() {
-    $("#booking").html(null);
+    $("#market").html(null);
     $("#payment").html(null);
     $("#history").load("history.html");
 }

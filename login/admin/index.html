@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- jquery -->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <title>การพัฒนาระบบฐานข้อมูลการจองพื้นที่ตลาดนัดออนไลน์</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Modal -->
+        <div id="alert"></div>
+
+        <!-- login form -->
+        <div class="card mx-auto my-5" style="max-width: 600px;">
+            <dic class="card-header bg-dark text-white text-center">เข้าสู่ระบบ</dic>
+            <div class="card-body bg-light">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="">อีเมล</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp"
+                            placeholder="กรอกอีเมล หรือชื่อผู้ใช้" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="">รหัสผ่าน</label>
+                        <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน" id="password">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button id="btnLogin" type="submit" class="btn btn-dark">เข้าสู่ระบบ</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="../../config/config.js"></script>
+    <script src="login.js"></script>
+
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
