@@ -8,24 +8,17 @@ $(window).on('load', () => {
     onload();
 });
 
-$(() => {
-    $("#modal").on("hidden.bs.modal", (e) => {
-        window.location.reload()
-        console.log(e)
-    })
-})
-
 function onload(page = 1, limit = 10) {
     $("#tbody").html(null);
     $(".pagination").html(null);
-    getUser(page, limit).then(res => {
+    return getData(page, limit).then(res => {
         let data = JSON.parse(res);
-        tbody(data);
         pagination(parseInt(data.page), parseInt(data.num_rows), parseInt(data.limit));
+        tbody(data)
     });
 }
 
-function getUser(page, limit) {
+function getData(page, limit) {
     return $.get(`${baseUrl}api/user/get.php?page=${page}&limit=${limit}`, res => res);
 }
 
@@ -46,7 +39,6 @@ function tbody(data) {
         }
 
         run_no = (data.limit * (data.page - 1)) + counter;
-        tbody_td = $("<td>");
         $("#tbody").append(
             $("<tr>")
                 .append($("<td>").text(run_no))
