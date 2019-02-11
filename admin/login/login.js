@@ -15,12 +15,12 @@ function login() {
         if (res.success) {
             window.localStorage.setItem("user_data", JSON.stringify(res.data));
             if (res.data) {
-                window.location.href = "../../admin";
+                window.location.href = baseUrl + "admin";
             }
         }
         else {
             $("#modal").modal("show");
-            $(".modal-header").text("เข้าสู่ระบบ");
+            $(".modal-header").text("เข้าสู่ระบบ").addClass("bg-dark");
             $(".modal-body").text("การเข้าสู่ระบบล้มเหลว");
         }
     }, "json");

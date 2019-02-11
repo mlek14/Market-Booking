@@ -3,6 +3,8 @@
 class ConnectDB extends mysqli
 {
     private $host = "localhost";
+    // private $user = "cpt4yn5718";
+    // private $pass = "cpt718";
     private $user = "root";
     private $pass = "";
     private $database = "cpt4yn5718";

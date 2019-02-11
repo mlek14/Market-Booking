@@ -15,16 +15,38 @@
 <body>
     <!-- Navbar -->
     <div id="navbar"></div>
-    <script>$("#navbar").load("../layout/navbar.html");</script>
 
     <div class="container">
         <!-- Modal -->
         <div id="alert"></div>
+        <div>
+            <h1>Market</h1>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
-    <!-- config -->
-    <script src="../config/config.js"></script>
+    <script src="app.js"></script>
+    <script src="../navbar.js"></script>
+    <script src="../../config/config.js"></script>
     <!-- bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>

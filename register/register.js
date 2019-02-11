@@ -20,7 +20,9 @@ function register() {
 
     $.post("../api/register.php", body, res => {
         if (res.success) {
-            $("#modal").modal("show");
+            $("#modal").modal("show").on("hidden.bs.modal", () => {
+                window.location.reload()
+            });
             $(".modal-header").text("สมัครสมาชิก");
             $(".modal-body").text("สำเร็จ")
         }
@@ -33,11 +35,11 @@ function register() {
 }
 
 function gotoLogin() {
-    window.location.href = "../login/user";
+    window.location.href = "../login";
 }
 
 function getUserRole() {
-    $.getJSON("../api/user_role/get.php", data => {
+    $.getJSON("../api/user_type/get.php", data => {
         data.forEach(role => {
             $("#type").append($("<option>").attr("value", role.ID).text(role.name));
         });
